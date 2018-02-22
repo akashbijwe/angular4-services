@@ -1,0 +1,37 @@
+<br />
+<div class="card text-left" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Component1 data</h5>
+    <p class="card-text">
+      <b>Name: </b>{{service.user.name}} <br />
+      <b>Email: </b>{{service.user.email}}
+    </p>
+    <div class="text-right">
+      <a href="#" class="btn btn-primary" (click)="open(content)">Edit</a>
+    </div>
+  </div>
+</div>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #userData="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="email" class="form-control" id="name" placeholder="Enter Name" name="name" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email"  placeholder="Enter Email" name="email" ngModel>
+      </div>
+      <button type="button" class="btn btn-success" (click)="saveData(userData.value)">Save</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" id="close-modal" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

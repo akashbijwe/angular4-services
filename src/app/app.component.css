@@ -1,0 +1,10 @@
+.service-container{
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.card{
+  margin: 0 auto;
+}
+div[class^="col"]{
+  padding: 20px 0;
+}
